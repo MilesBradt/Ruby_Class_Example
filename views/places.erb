@@ -5,9 +5,12 @@
     <title></title>
   </head>
   <body>
+    <div class="well">
+
     <% @places.each do |place| %>
     <p><%= place.name + ", " + place.location %></p>
     <% end %>
+  </div>
 
     <form action="/places" method="post">
       <button type="submit" class="btn user_button">Sort Alphabetically</button>
