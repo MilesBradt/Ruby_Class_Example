@@ -17,7 +17,6 @@ class Place
   end
 
   def self.sort_alphabetical
-    # return @@places_array = @@places_array.sort_by! { |m| m.@@places_array.name.downcase }
     @@places_array.sort_by!{|place| place.name}
   end
 

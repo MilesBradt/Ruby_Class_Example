@@ -23,3 +23,8 @@ get('/places') do
   @places = Place.get_name_list
   erb(:places)
 end
+
+post('/places') do
+  @places = Place.sort_alphabetical
+  erb(:places)
+end
