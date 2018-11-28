@@ -1,21 +1,25 @@
+require('pry')
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/place.rb')
-# require('./public/styles.css')
 
 
 get('/') do
   erb(:home)
 end
 
-post('/book') do
-  @place_name = params.fetch("user_input_name")
-  @place_loaction = params.fetch("user_input_location")
+post('/') do
+  place_name = params.fetch("user_input_name")
+  place_location = params.fetch("user_input_location")
+  place_name = Place.new(place_name, place_location)
+  place_name.add_info
+  @names = Place.get_name_list
+  # binding.pry
+  erb(:home)
+end
 
-  user_places = Place.new(@place_name, @place_loaction)
-
-  user_places.add_info
-  @names = user_places.get_name_list
+get('/book') do
+  @names = Place.get_name_list
   erb(:book)
 end

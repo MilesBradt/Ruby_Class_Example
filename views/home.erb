@@ -8,16 +8,21 @@
     <div class="jumbotron">
       <h2>Places I've been</h2>
     </div>
-    <form action="/book" method="post">
+
+    <form method="post">
       <div class="form-group">
-        <label class="form-control-label" for="user_input">Name of the place have you been?</label>
+        <label class="form-control-label" for="user_input_name">Name of the place have you been?</label>
         <input type="text" class="form-control" id="user_input" name="user_input_name">
       </div>
       <div class="form-group">
-        <label class="form-control-label" for="user_input">Where was this?</label>
+        <label class="form-control-label" for="user_input_location">Where was this?</label>
         <input type="text" class="form-control" id="user_input" name="user_input_location">
       </div>
       <button type="submit" class="btn user_button">Okay</button>
+    </form>
+    <br>
+    <form action="/book" method="get">
+      <button type="submit" class="btn user_button">Go to book</button>
     </form>
   </body>
 </html>

@@ -1,8 +1,7 @@
 class Place
 
-  @@name_array = []
-  @@location_array = []
   @@places_array = []
+  attr_reader :name, :location
 
   def initialize(name, location)
     @name = name
@@ -10,12 +9,10 @@ class Place
   end
 
   def add_info
-    @@name_array.push(@name)
-    @@location_array.push(@location)
-    @@places_array.push(@@name_array.zip(@@location_array))
+    @@places_array.push(self)
   end
 
-  def get_name_list
+  def self.get_name_list
     @@places_array
   end
 
