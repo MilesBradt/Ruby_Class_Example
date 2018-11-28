@@ -14,12 +14,12 @@ post('/') do
   place_location = params.fetch("user_input_location")
   place_name = Place.new(place_name, place_location)
   place_name.add_info
-  @names = Place.get_name_list
+  @places = Place.get_name_list
   # binding.pry
   erb(:home)
 end
 
-get('/book') do
-  @names = Place.get_name_list
-  erb(:book)
+get('/places') do
+  @places = Place.get_name_list
+  erb(:places)
 end
