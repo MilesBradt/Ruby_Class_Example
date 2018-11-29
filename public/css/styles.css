@@ -1,8 +1,24 @@
 body {
   background-color: #2E3138;
-  color: #E3E7F2
+  color: #E3E7F2;
 }
 
-.jumbotron {
+.panel {
+  font-size: 48px;
+  background-color: #2E3138;
   text-align: center;
+}
+
+button {
+  color: #2E3138;
+}
+
+.well {
+  color: #2E3138;
+  width: 500px;
+  font-size: 20px;
+}
+
+.form-control {
+  width: 250px;
 }
