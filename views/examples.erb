@@ -1,10 +1,11 @@
 <div class="well">
-  <% @places.each do |place| %>
-  <p><%= "- " + place.name + ", " + place.location %></p>
+
+  <% @examples.each do |example| %>
+  <p><%= "Game Name: " + example.name + "</br>" + "Game Description: "+ example.description %></p>
   <% end %>
 </div>
 
-<form action="/places" method="post">
+<form action="/examples" method="post">
   <button type="submit" class="btn user_button">Sort Alphabetically</button>
 </form>
 <br>

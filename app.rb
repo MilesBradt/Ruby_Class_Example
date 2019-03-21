@@ -2,7 +2,7 @@ require('pry')
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
-require('./lib/place.rb')
+require('./lib/example.rb')
 
 
 get('/') do
@@ -10,21 +10,27 @@ get('/') do
 end
 
 post('/') do
-  place_name = params.fetch("user_input_name")
-  place_location = params.fetch("user_input_location")
-  place_name = Place.new(place_name, place_location)
-  place_name.add_info
-  @places = Place.get_name_list
+  example_name = params.fetch("user_input_name")
+  example_description = params.fetch("user_input_description")
+  example_name = Example.new(example_name, example_description)
+  example_name.add_info
+
+  @examples = Example.get_name_list
   # binding.pry
   erb(:home)
 end
 
-get('/places') do
-  @places = Place.get_name_list
-  erb(:places)
+get('/examples') do
+  mario64 = Example.new('Super Mario 64', 'Mario run and he jump!')
+  mario64.add_info
+
+  baba = Example.new('BaBa is You', 'Flag is win? You write the rules')
+  baba.add_info
+  @examples = Example.get_name_list
+  erb(:examples)
 end
 
-post('/places') do
-  @places = Place.sort_alphabetical
-  erb(:places)
+post('/examples') do
+  @examples = Example.sort_alphabetical
+  erb(:examples)
 end

@@ -1,21 +1,21 @@
 
 
 <div class="panel">
-  <p>Places I've been</p>
+  <p>Examples</p>
 </div>
 
 <form method="post">
   <div class="form-group">
-    <label class="form-control-label" for="user_input_name">Name of the place have you been?</label>
+    <label class="form-control-label" for="user_input_name">Name of the example?</label>
     <input type="text" class="form-control" id="user_input" name="user_input_name">
   </div>
   <div class="form-group">
-    <label class="form-control-label" for="user_input_location">Where was this?</label>
-    <input type="text" class="form-control" id="user_input" name="user_input_location">
+    <label class="form-control-label" for="user_input_description">Description of example?</label>
+    <input type="text" class="form-control" id="user_input" name="user_input_description">
   </div>
   <button type="submit" class="btn user_button">Okay</button>
 </form>
 <br>
-<form action="/places" method="get">
+<form action="/examples" method="get">
   <button type="submit" class="btn user_button">Go to list</button>
 </form>
